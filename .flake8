@@ -7,4 +7,5 @@ exclude =
     *migrations*,
     venv,
     .venv,
-    env
+    env,
+    alembic
