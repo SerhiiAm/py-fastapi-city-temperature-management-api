@@ -10,7 +10,7 @@ class CityCreate(CityBase):
     pass
 
 
-class CityUpdate(CityBase):
+class CityUpdate(BaseModel):
     name: str | None = Field(default=None, min_length=1, max_length=100)
     additional_info: str | None = Field(default=None, max_length=500)
 
