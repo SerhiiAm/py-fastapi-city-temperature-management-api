@@ -10,7 +10,10 @@ async def get_temperatures(
         db: AsyncSession,
         city_id: int | None = None,
 ) -> list[DBTemperature]:
-    stmt = select(DBTemperature)
+    stmt = select(DBTemperature).order_by(
+        DBTemperature.date_time,
+        DBTemperature.id,
+    )
     if city_id is not None:
         stmt = stmt.where(DBTemperature.city_id == city_id)
 
